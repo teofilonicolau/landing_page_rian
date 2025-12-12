@@ -5,9 +5,9 @@ const Sobre = () => {
     const teamMembers = [
         { name: "Dr. Rian Nicolau", role: "Advogado e Sócio" },
         { name: "Dr. Júnior Nicolau", role: "Advogado e Sócio" },
-        { name: "Rayoane Cavalcante Oliveira", role: "Advogada Previdenciária" },
+        { name: "Dra. Rayoane Cavalcante Oliveira", role: "Advogada Previdenciária" },
         { name: "Dra. Ivana Carla Teixeira de S. Nicolau", role: "Advogada Previdenciária" },
-        { name: "Francisca Fernanda Alves de Oliveira", role: "Advogada Previdenciária" },
+        { name: "Dra. Francisca Fernanda Alves de Oliveira", role: "Advogada Previdenciária" },
     ];
 
     const highlights = [
