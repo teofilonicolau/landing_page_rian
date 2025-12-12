@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# ⚖️ Rian Nicolau Advocacia - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Finished-success?style=for-the-badge)
 
-Currently, two official plugins are available:
+> *Gerar tranquilidade financeira para os nossos clientes para que tenham tempo para se dedicar ao que mais amam.*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Uma **Landing Page Institucional e de Alta Conversão** desenvolvida para o escritório **Rian Nicolau Advocacia**, especializado em Direito Previdenciário. O projeto visa apresentar o escritório, sua equipe, áreas de atuação e facilitar o contato com potenciais clientes através de integrações diretas.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades Principais
 
-## Expanding the ESLint configuration
+*   **🎨 Design Premium e Moderno:** Identidade visual forte com paleta Azul Marinho e Dourado, transmitindo confiança e autoridade.
+*   **📱 Totalmente Responsivo:** Otimizado para funcionar perfeitamente em celulares, tablets e desktops.
+*   **💬 Integração com WhatsApp:**
+    *   Formulário de contato que redireciona os dados preenchidos diretamente para uma conversa no WhatsApp do escritório.
+    *   Botão flutuante para contato imediato.
+*   **👥 Seção "Sobre" Completa:** Apresentação da equipe, missão e valores, com navegação fluida.
+*   **🔍 Consultar Direitos:** Página dedicada para qualificação de leads interessados em consultoria.
+*   **❓ FAQ Interativo:** Seção de perguntas frequentes para tirar dúvidas rápidas.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Este projeto foi construído com as melhores práticas de desenvolvimento web moderno:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+*   **[React](https://react.dev/):** Biblioteca principal para construção da interface.
+*   **[TypeScript](https://www.typescriptlang.org/):** Para tipagem estática e maior segurança no código.
+*   **[Vite](https://vitejs.dev/):** Build tool ultra-rápida.
+*   **[Tailwind CSS](https://tailwindcss.com/):** Framework de utilitários para estilização ágil e responsiva.
+*   **[Framer Motion](https://www.framer.com/motion/):** Para animações suaves e transições de página.
+*   **[Lucide React](https://lucide.dev/):** Ícones leves e elegantes.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/teofilonicolau/landing_page_rian.git
+    cd landing_page_rian
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Rode o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+
+4.  Acesse `http://localhost:5173` no seu navegador.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+src/
+├── components/   # Componentes reutilizáveis (Header, Footer, Hero, Forms...)
+├── pages/        # Páginas principais (Home, Sobre, Consultar Direitos)
+├── assets/       # Imagens e recursos estáticos
+└── main.tsx      # Ponto de entrada da aplicação
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 👨‍💻 Créditos
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Desenvolvido por **[Tamar AI]**.
+
+---
+
+<p align="center">
+  &copy; 2024 Rian Nicolau Advocacia. Todos os direitos reservados.
+</p>
