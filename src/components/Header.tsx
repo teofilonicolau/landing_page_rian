@@ -1,28 +1,83 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
+    const isHome = location.pathname === '/';
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 50);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const navLinks = [
-        { name: 'Home', to: 'home' },
-        { name: 'Sobre', to: 'hero' }, // Assuming 'hero' or 'about' section
-        { name: 'FAQ', to: 'faq' },
+        { name: 'Home', type: 'scroll', to: 'home' },
+        { name: 'Sobre', type: 'route', to: '/sobre' },
+        { name: 'FAQ', type: 'scroll', to: 'faq' },
     ];
 
     const externalLinks = [
         { name: 'Blog', href: 'https://www.riannicolauadv.adv.br/rnadvocaciablogprevidenciario/' }
     ];
+
+    const renderNavLink = (link: any, mobile = false) => {
+        const baseClasses = "text-gray-200 hover:text-brand-gold cursor-pointer transition-colors font-medium";
+        const desktopClasses = "text-sm tracking-wide";
+        const mobileClasses = "py-2 block";
+        const classes = `${baseClasses} ${mobile ? mobileClasses : desktopClasses}`;
+
+        if (link.type === 'route') {
+            return (
+                <Link
+                    key={link.name}
+                    to={link.to}
+                    className={classes}
+                    onClick={() => setIsOpen(false)}
+                >
+                    {link.name.toUpperCase()}
+                </Link>
+            );
+        }
+
+        if (!isHome) {
+            return (
+                <Link
+                    key={link.name}
+                    to="/"
+                    className={classes}
+                    onClick={() => setIsOpen(false)}
+                >
+                    {link.name.toUpperCase()}
+                </Link>
+            );
+        }
+
+        return (
+            <ScrollLink
+                key={link.name}
+                to={link.to}
+                smooth={true}
+                className={classes}
+                onClick={() => setIsOpen(false)}
+            >
+                {link.name.toUpperCase()}
+            </ScrollLink>
+        );
+    };
 
     return (
         <header
@@ -31,27 +86,19 @@ const Header = () => {
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
-                <div className="flex items-center gap-2">
-                    <span className="text-3xl font-bebas text-white">RN</span>
-                    <div className="h-8 w-[1px] bg-brand-gold"></div>
-                    <div className="flex flex-col leading-none">
+                <Link to="/" className="flex items-center gap-2">
+                    <span className="text-4xl font-bebas text-white">RN</span>
+                    <div className="h-10 w-[1px] bg-brand-gold"></div>
+                    <div className="flex flex-col leading-none justify-center">
                         <span className="font-bebas text-xl tracking-wider text-brand-gold">RIAN NICOLAU</span>
-                        <span className="text-[10px] tracking-[0.2em] text-gray-300">ADVOCACIA</span>
+                        <span className="text-[10px] text-gray-300 tracking-widest my-[1px]">OAB/CE 2.057</span>
+                        <span className="text-[10px] tracking-[0.3em] text-brand-gold">ADVOCACIA</span>
                     </div>
-                </div>
+                </Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <ScrollLink
-                            key={link.name}
-                            to={link.to}
-                            smooth={true}
-                            className="text-gray-200 hover:text-brand-gold cursor-pointer transition-colors font-medium text-sm tracking-wide"
-                        >
-                            {link.name.toUpperCase()}
-                        </ScrollLink>
-                    ))}
+                    {navLinks.map((link) => renderNavLink(link))}
                     {externalLinks.map((link) => (
                         <a
                             key={link.name}
@@ -87,17 +134,7 @@ const Header = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="md:hidden absolute top-full left-0 w-full bg-brand-navy border-t border-white/10 p-4 flex flex-col gap-4 shadow-xl">
-                    {navLinks.map((link) => (
-                        <ScrollLink
-                            key={link.name}
-                            to={link.to}
-                            smooth={true}
-                            className="text-gray-200 hover:text-brand-gold py-2 block font-medium"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.name.toUpperCase()}
-                        </ScrollLink>
-                    ))}
+                    {navLinks.map((link) => renderNavLink(link, true))}
                     {externalLinks.map((link) => (
                         <a
                             key={link.name}

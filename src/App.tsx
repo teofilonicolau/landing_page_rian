@@ -9,6 +9,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 import ConsultarDireitos from './pages/ConsultarDireitos';
+import Sobre from './pages/Sobre'; // Import Sobre
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const LandingPage = () => (
   <>
@@ -30,7 +32,9 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/consultar-direitos" element={<ConsultarDireitos />} />
+        <Route path="/sobre" element={<Sobre />} /> {/* New Route */}
       </Routes>
+      <FloatingWhatsApp />
     </Router>
   );
 }
