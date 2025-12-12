@@ -26,7 +26,7 @@ const Hero = () => {
                     </div>
 
                     <h1 className="font-bebas text-5xl md:text-7xl leading-[0.9] text-white mb-6">
-                        13 ANOS AJUDANDO <br />
+                        15 ANOS AJUDANDO <br />
                         <span className="text-brand-gold">TRABALHADORES</span> DO BRASIL
                     </h1>
 
