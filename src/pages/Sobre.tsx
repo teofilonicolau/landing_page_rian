@@ -20,20 +20,20 @@ const Sobre = () => {
     ];
 
     return (
-        <div className="bg-white min-h-screen pt-20">
-            {/* Back Navigation */}
-            <div className="container mx-auto px-4 py-6">
-                <Link to="/" className="inline-flex items-center gap-2 text-brand-navy hover:text-brand-gold transition-colors font-medium">
-                    <ArrowLeft size={20} />
-                    Voltar para Início
-                </Link>
-            </div>
-
+        <div className="bg-white min-h-screen">
             {/* Header / Hero Section */}
-            <section className="bg-brand-navy py-20 relative overflow-hidden">
+            <section className="bg-brand-navy pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy to-brand-dark/90 z-0"></div>
                 {/* Abstract Shapes */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+
+                {/* Back Navigation - Inside Hero */}
+                <div className="container mx-auto px-4 relative z-20 mb-8 text-left">
+                    <Link to="/" className="inline-flex items-center gap-2 text-gray-300 hover:text-brand-gold transition-colors font-medium">
+                        <ArrowLeft size={20} />
+                        Voltar para Início
+                    </Link>
+                </div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <motion.div
