@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/consultar-direitos" element={<ConsultarDireitos />} />
-        <Route path="/sobre" element={<Sobre />} /> {/* New Route */}
+        <Route path="/sobre" element={<><Header /><Sobre /><Footer /></>} /> {/* New Route */}
       </Routes>
       <FloatingWhatsApp />
     </Router>
