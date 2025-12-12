@@ -58,7 +58,9 @@ const Footer = () => {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
                     <p>&copy; {new Date().getFullYear()} Rian Nicolau Advocacia. Todos os direitos reservados.</p>
-                    <p>Desenvolvido por <span className="text-brand-gold">Tamar AI </span></p>
+                    <p className="text-center text-sm text-white mt-8">
+                        Desenvolvido por <span className="text-brand-gold font-semibold">Tamar AI</span>
+                    </p>
                 </div>
             </div>
         </footer>

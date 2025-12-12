@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, User } from 'lucide-react';
+import { CheckCircle, ArrowRight, User, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Sobre = () => {
     const teamMembers = [
@@ -20,6 +21,14 @@ const Sobre = () => {
 
     return (
         <div className="bg-white min-h-screen pt-20">
+            {/* Back Navigation */}
+            <div className="container mx-auto px-4 py-6">
+                <Link to="/" className="inline-flex items-center gap-2 text-brand-navy hover:text-brand-gold transition-colors font-medium">
+                    <ArrowLeft size={20} />
+                    Voltar para Início
+                </Link>
+            </div>
+
             {/* Header / Hero Section */}
             <section className="bg-brand-navy py-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy to-brand-dark/90 z-0"></div>
@@ -125,12 +134,16 @@ const Sobre = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="bg-brand-gold py-16">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bebas text-brand-navy mb-6">
+            {/* CTA Section */}
+            <section className="bg-brand-navy py-16 relative overflow-hidden">
+                {/* Background decoration to match Hero */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+
+                <div className="container mx-auto px-4 text-center relative z-10">
+                    <h2 className="text-3xl md:text-4xl font-bebas text-white mb-6">
                         QUER SABER SE TEM DIREITO À APOSENTADORIA OU REVISÃO?
                     </h2>
-                    <p className="text-brand-navy/80 text-lg mb-8 max-w-2xl mx-auto font-medium">
+                    <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto font-medium">
                         Sabemos que lidar com o INSS pode ser difícil. Estamos aqui para facilitar esse caminho. Fale agora mesmo com um especialista.
                     </p>
 
@@ -139,14 +152,14 @@ const Sobre = () => {
                             href="https://wa.me/5588988510834?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
                             target="_blank"
                             rel="noreferrer"
-                            className="bg-brand-navy text-white px-8 py-4 rounded font-bold text-lg hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-2"
+                            className="bg-brand-gold text-white px-8 py-4 rounded font-bold text-lg hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-2"
                         >
                             FALAR COM ESPECIALISTA
                             <ArrowRight size={20} />
                         </a>
                         <a
                             href="/consultar-direitos"
-                            className="bg-white/20 border-2 border-brand-navy text-brand-navy px-8 py-4 rounded font-bold text-lg hover:bg-brand-navy hover:text-white transition-all flex items-center justify-center"
+                            className="bg-transparent border-2 border-brand-gold text-brand-gold px-8 py-4 rounded font-bold text-lg hover:bg-brand-gold hover:text-white transition-all flex items-center justify-center"
                         >
                             ANÁLISE GRATUITA
                         </a>
