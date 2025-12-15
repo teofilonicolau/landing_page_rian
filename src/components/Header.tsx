@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.jpg';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -87,13 +88,7 @@ const Header = () => {
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2">
-                    <span className="text-4xl font-bebas text-white">RN</span>
-                    <div className="h-10 w-[1px] bg-brand-gold"></div>
-                    <div className="flex flex-col leading-none justify-center">
-                        <span className="font-bebas text-xl tracking-wider text-brand-gold">RIAN NICOLAU</span>
-                        <span className="text-[10px] text-gray-300 tracking-widest my-[1px]">OAB/CE 2.057</span>
-                        <span className="text-[10px] tracking-[0.3em] text-brand-gold">ADVOCACIA</span>
-                    </div>
+                    <img src={logo} alt="Rian Nicolau Advocacia" className="h-16 md:h-20 w-auto object-contain" />
                 </Link>
 
                 {/* Desktop Nav */}

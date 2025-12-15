@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Youtube } from 'lucide-react';
+import logo from '../assets/logo.jpg';
 
 const Footer = () => {
     // Custom TikTok Icon or use Video icon as placeholder
@@ -10,12 +11,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center gap-2 justify-center md:justify-start mb-4">
-                            <span className="text-3xl font-bebas text-white">RN</span>
-                            <div className="h-8 w-[1px] bg-brand-gold"></div>
-                            <div className="flex flex-col leading-none">
-                                <span className="font-bebas text-xl tracking-wider text-brand-gold">RIAN NICOLAU</span>
-                                <span className="text-[10px] tracking-[0.2em] text-gray-400">ADVOCACIA</span>
-                            </div>
+                            <img src={logo} alt="Rian Nicolau Advocacia" className="h-24 w-auto object-contain" />
                         </div>
                         <p className="text-gray-500 max-w-xs mx-auto md:mx-0">
                             Defendendo seus direitos previdenciários com ética, competência e resultado.
@@ -56,9 +52,9 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-center md:gap-8 items-center text-gray-600 text-sm">
                     <p>&copy; {new Date().getFullYear()} Rian Nicolau Advocacia. Todos os direitos reservados.</p>
-                    <p className="text-center text-sm text-white mt-8">
+                    <p className="text-center text-sm text-white mt-4 md:mt-0">
                         Desenvolvido por <span className="text-brand-gold font-semibold">Tamar AI</span>
                     </p>
                 </div>
